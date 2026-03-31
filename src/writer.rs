@@ -580,7 +580,10 @@ impl EdfWriter {
         let mut main_header = vec![0u8; 256];
         
         // 版本 (8字节)
-        main_header[0..8].copy_from_slice(b"0       ");
+        const START_BYTE:u8 = 255;
+        main_header[0..8].copy_from_slice(
+        	&[START_BYTE, b'B', b'I', b'O', b'S', b'E', b'M', b'I']
+       	);
         
         // 患者信息字段 (80字节)
         let patient_field = format!("{} {} {} {} {}", 
@@ -612,7 +615,7 @@ impl EdfWriter {
         main_header[184..192].copy_from_slice(header_size_str.as_bytes());
         
         // EDF+标识 (44字节)
-        main_header[192..197].copy_from_slice(b"EDF+C");
+        main_header[192..197].copy_from_slice(b"24BIT");
         
         // 数据记录数 (8字节)
         let datarecords_str = format!("{:<8}", total_datarecords);

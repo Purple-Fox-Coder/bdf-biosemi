@@ -847,7 +847,9 @@ impl EdfReader {
         
         // 验证EDF+标识
         let version = String::from_utf8_lossy(&main_header[0..8]);
-        if !version.trim().starts_with('0') {
+		// Char 255
+        const START_BYTE:char = '�';
+        if !version.trim().starts_with(START_BYTE) {
             return Err(EdfError::UnsupportedFileType(format!("Not an EDF file: {}", version)));
         }
         
@@ -868,7 +870,7 @@ impl EdfReader {
         
         // 检查EDF+标识
         let reserved = String::from_utf8_lossy(&main_header[192..236]);
-        let is_edfplus = reserved.starts_with("EDF+C");
+        let is_edfplus = reserved.starts_with("24BIT");
         if !is_edfplus {
             return Err(EdfError::UnsupportedFileType("Only EDF+ files are supported".to_string()));
         }
