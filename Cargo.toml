@@ -2,13 +2,13 @@
 name = "edfplus"
 version = "0.1.0"
 edition = "2021"
-authors = ["Horned_Axe <horned_axe@proton.me>"]
-description = "A pure Rust implementation of EDF+ file format reader/writer"
+authors = ["Anna <annatheprogrammer777@proton.com>"]
+description = "A pure Rust implementation of BDF file format reader/writer, forked from edfplus"
 license = "BSD-3-Clause"
-repository = "https://github.com/2986002971/edfplus"
-homepage = "https://github.com/2986002971/edfplus"
+repository = "https://github.com/Purple-Fox-Coder/bdf-biosemi"
+homepage = "https://github.com/Purple-Fox-Coder/bdf-biosemi"
 documentation = "https://2986002971.github.io/edfplus/edfplus/"
-keywords = ["edf", "signal-processing", "eeg", "medical", "biosignal"]
+keywords = ["bdf", "signal-processing", "eeg", "medical", "biosignal"]
 categories = ["science", "parser-implementations"]
 readme = "README.md"
 
