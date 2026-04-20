@@ -2,4 +2,4 @@
 test_data/*
 *.c
 *.h
-*.edf
+*.bdf
