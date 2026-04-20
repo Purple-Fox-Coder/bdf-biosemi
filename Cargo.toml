@@ -1,6 +1,6 @@
 [package]
 name = "edfplus"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
 authors = ["Anna <annatheprogrammer777@proton.com>"]
 description = "A pure Rust implementation of BDF file format reader/writer, forked from edfplus"
